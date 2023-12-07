@@ -34,7 +34,7 @@ export fmi2StatusToString
 
 Converts a String `s` to fmi2Status.
 """
-function fmi2StatusToString(s::AbstractString)
+function fmi2StringToStatus(s::AbstractString)
     if s == "OK"
         return fmi2StatusOK
     elseif s == "Warning"
@@ -48,10 +48,10 @@ function fmi2StatusToString(s::AbstractString)
     elseif s == "Pending" 
         return fmi2StatusPending
     else
-        @assert false "fmi2StatusToString($(s)): Unknown FMU status `$(s)`."
+        @assert false "fmi2StringToStatus($(s)): Unknown FMU status `$(s)`."
     end
 end
-export fmi2StatusToString
+export fmi2StringToStatus
 
 """
 
